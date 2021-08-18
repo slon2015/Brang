@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/day/{brangsJson.date}.tsx"],"names":["Day"],"mappings":"2FAAA,gCAIeA,UAFH,kBAAM","file":"component---src-pages-day-brangs-json-date-tsx-689f9ad34ee3648a9fec.js","sourcesContent":["import React from 'react';\n\nconst Day = () => <></>\n\nexport default Day;\n"],"sourceRoot":""}
