@@ -9,7 +9,6 @@ const ymId = process.env.YM;
 /* eslint-disable */
 module.exports = {
   /* Your site config here */
-  pathPrefix: "/Brang",
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-typescript",
