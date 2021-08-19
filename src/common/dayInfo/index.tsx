@@ -44,25 +44,27 @@ export const Body = ({day, brangs, selectedCategories, categories, selectCategor
           brangs.map((brang, i) => (
             <Grid item key={i}>
               <Panel className={styles.brangPanel}>
-                <Grid container justifyContent="space-between" wrap="nowrap" alignItems="baseline">
-                  <Grid item xs={5}>
+                <Grid container justifyContent="space-between" wrap="nowrap" alignItems="center" spacing={1}>
+                  <Grid item sm={8} xs={4}>
                     <Link to={`/brang/${brang.id}`}>
                       <Typography variant="h2" className={styles.name}>{brang.name}</Typography>
                     </Link>
                   </Grid>
-                  <Grid item xs={3}>
-                    <Typography variant="h2" className={styles.time}>
-                      {brang.startTime}
-                    </Typography>
-                  </Grid>
-                  <Grid item container justifyContent="center" xs={4}>
-                    {brang.tags.map((tag, i) => (
-                      <Grid item key={i}>
-                        <Tag>
-                          {tag}
-                        </Tag>
-                      </Grid>
-                    ))}
+                  <Grid item container direction="column" alignItems="center" spacing={2} sm={4} xs={8}>
+                    <Grid item>
+                      <Typography variant="h2" className={styles.time}>
+                        {brang.startTime}
+                      </Typography>
+                    </Grid>
+                    <Grid item container justifyContent="center" wrap="nowrap">
+                      {brang.tags.map((tag, i) => (
+                        <Grid item key={i}>
+                          <Tag>
+                            {tag}
+                          </Tag>
+                        </Grid>
+                      ))}
+                    </Grid>
                   </Grid>
                 </Grid>
               </Panel>
@@ -74,7 +76,7 @@ export const Body = ({day, brangs, selectedCategories, categories, selectCategor
   )
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(muiTheme => ({
   name: {
     fontSize: "20px",
   },
@@ -88,4 +90,4 @@ const useStyles = makeStyles({
     fontSize: "34px",
     lineHeight: "40px"
   }
-})
+}))
