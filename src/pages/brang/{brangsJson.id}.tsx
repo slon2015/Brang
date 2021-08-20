@@ -7,12 +7,9 @@ import { helmetJsonLdProp } from "react-schemaorg";
 import '../styles.css'
 import moment from "moment";
 import { Head } from "../../common/seo";
+import { pageDefault } from "../../common/lib/common";
 
-moment.locale('ru', {
-  week: {
-    dow: 1,
-  }
-})
+pageDefault()
 
 const mapDateForLd = (date: string, time: string | null) => {
   const dateFormat = "YYYY-MM-DD",

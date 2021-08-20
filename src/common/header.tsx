@@ -10,7 +10,7 @@ export const Header = () => {
       <Box className={styles.headerGap}/>
       <Box className={styles.header}>
         <Grid container>
-          <IconButton href="/">
+          <IconButton href="/calendar">
             <ChevronLeft/>
           </IconButton>
         </Grid>

@@ -1,17 +1,13 @@
 import { graphql } from 'gatsby';
-import moment from 'moment';
 import React from 'react';
 import { useState } from 'react';
 import { Body } from '../../common/dayInfo';
+import { pageDefault } from '../../common/lib/common';
 import { DateParam, DayQuery, QueryData } from '../../common/lib/model';
 import { Head } from '../../common/seo';
 import '../styles.css'
 
-moment.locale('ru', {
-  week: {
-    dow: 1,
-  }
-})
+pageDefault();
 
 export const query = graphql`
   query dayQuery($date: Date) {
