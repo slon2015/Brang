@@ -2,9 +2,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const seo = {
-  url: "https://t3.gg",
-  title: "Minimal Gatsby Typescript Template",
-  description: "Minimal Gatsby Typescript Template",
+  url: "https://brang.tech",
+  title: "Brang",
+  description: "Креативное сообщество",
   favicon: "/icon.png"
 };
 
