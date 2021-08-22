@@ -14,7 +14,6 @@ module.exports = {
     "gatsby-plugin-typescript",
     "gatsby-plugin-less",
     "gatsby-transformer-json",
-    "gatsby-transformer-mdx",
     "gatsby-plugin-material-ui",
     {
       resolve: `gatsby-source-filesystem`,
@@ -22,6 +21,14 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'wiki',
+        path: `${__dirname}/src/docs/`,
+      },
+    },
+    "gatsby-plugin-mdx",
     !!ymId && {
       resolve: 'gatsby-plugin-yandex-metrika',
       options: {

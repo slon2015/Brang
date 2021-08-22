@@ -90,3 +90,6 @@ export const muiTheme = createTheme({
     }
   }
 });
+
+export const desktopBreakpoint = muiTheme.breakpoints.up('sm'),
+  mobileBreakpoint = muiTheme.breakpoints.down('xs')

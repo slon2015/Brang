@@ -5,7 +5,7 @@ import moment, { Moment } from 'moment';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { BrangCalendarInfo } from '../lib/model';
-import { muiTheme, theme } from '../lib/theme';
+import { desktopBreakpoint, mobileBreakpoint, muiTheme, theme } from '../lib/theme';
 import { Tag } from './tag';
 
 interface CalendarProps {
@@ -134,8 +134,7 @@ export const Calendar = ({ month, year, getBrangs }: CalendarProps) => {
   );
 };
 
-const desktopBreakpoint = muiTheme.breakpoints.up('sm'),
-  mobileBreakpoint = muiTheme.breakpoints.down('xs')
+
 
 const useStyles = makeStyles(muiTheme => ({
   headerText: {
