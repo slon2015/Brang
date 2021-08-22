@@ -1,9 +1,9 @@
-import { Grid, ThemeProvider } from "@material-ui/core"
+import { Grid } from "@material-ui/core"
 import moment, { Moment } from "moment"
 import * as React from "react"
 import { useState } from "react"
+import { Header } from "../header"
 import { BrangCalendarInfo } from "../lib/model"
-import { muiTheme } from "../lib/theme"
 import { Calendar } from "./Calendar"
 import { CalendarControls } from "./calendarControls"
 
@@ -41,7 +41,8 @@ export const Body = ({brangs, tags}: BodyProps) => {
       .filter(brang => day.format("YYYY-MM-DD") === brang.date)
   }
   return (
-    <ThemeProvider theme={muiTheme}>
+    <>
+      <Header/>
       <Grid container direction="column">
         <Grid item>
           <CalendarControls
@@ -56,6 +57,6 @@ export const Body = ({brangs, tags}: BodyProps) => {
           <Calendar month={period.month} year={period.year} getBrangs={getBrangs}/>
         </Grid>
       </Grid>
-    </ThemeProvider>
+    </>
   )
 }

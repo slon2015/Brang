@@ -2,10 +2,10 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { useState } from 'react';
 import { Body } from '../../common/dayInfo';
+import { Layout } from '../../common/layout';
 import { pageDefault } from '../../common/lib/common';
 import { DateParam, DayQuery, QueryData } from '../../common/lib/model';
 import { Head } from '../../common/seo';
-import '../styles.css'
 
 pageDefault();
 
@@ -33,7 +33,7 @@ const Day = ({data, params}: QueryData<DayQuery, DateParam>) => {
       selected.length == 0 || b.tags.filter(t => selected.includes(t)).length > 0)
 
   return (
-    <>
+    <Layout>
       <Head/>
       <Body
        day={params.date}
@@ -42,7 +42,7 @@ const Day = ({data, params}: QueryData<DayQuery, DateParam>) => {
        selectedCategories={selected}
        selectCategories={setSelected}
       />
-    </>
+    </Layout>
   )
 }
 

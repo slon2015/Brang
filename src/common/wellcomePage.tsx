@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Icon, IconButton, makeStyles, SvgIcon, ThemeProvider, Typography } from '@material-ui/core';
+import { Box, Button, Grid, Icon, IconButton, makeStyles, SvgIcon, Typography } from '@material-ui/core';
 import React from 'react';
 import { Header } from './header';
 import { muiTheme, theme } from './lib/theme';
@@ -8,7 +8,7 @@ import { Panel } from './panel';
 export const WellcomePageBody = () => {
   const styles = useStyles()
   return (
-    <ThemeProvider theme={muiTheme}>
+    <>
       <Header/>
       <Box className={styles.container}>
         <Grid container direction="column" alignItems="stretch" spacing={1}>
@@ -56,7 +56,7 @@ export const WellcomePageBody = () => {
                 Мы поможем! У нас есть раздел с исчерпывающей документацией по мозговым штурмам.
                 <br/>
                 <Button href="/docs" className={styles.button}>
-                  Перейти к документации
+                  Перейти к базе знаний
                 </Button>
               </Typography>
             </Panel>
@@ -81,7 +81,7 @@ export const WellcomePageBody = () => {
           </Grid>
         </Grid>
       </Box>
-    </ThemeProvider>
+    </>
   )
 }
 

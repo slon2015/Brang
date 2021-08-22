@@ -1,14 +1,11 @@
 import { graphql } from "gatsby";
 import React from "react";
-import { pageDefault } from "../../common/lib/common";
+import { Layout } from "../../common/layout";
 import { QueryData } from "../../common/lib/model";
 import { Head } from "../../common/seo";
 import { Body } from "../../common/wiki";
-import { MenuEntry, MenuTreeNode, readMenu } from "../../common/wiki/menuUtils";
+import { MenuEntry, readMenu } from "../../common/wiki/menuUtils";
 import { MenuQuery } from "../../common/wiki/queries";
-import '../styles.css';
-
-pageDefault()
 
 
 export const query = graphql`
@@ -36,10 +33,10 @@ const Index = ({data}: QueryData<MenuQuery, never>) => {
     ref: n.frontmatter.ref
   })) as MenuEntry[]
   return (
-    <>
+    <Layout>
       <Head/>
       <Body tree={readMenu(items)}/>
-    </>
+    </Layout>
   )
 }
 

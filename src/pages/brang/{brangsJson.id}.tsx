@@ -4,12 +4,9 @@ import { BrangQuery, QueryData } from "../../common/lib/model"
 import { Body } from "../../common/brangInfo"
 import { SocialEvent } from "schema-dts";
 import { helmetJsonLdProp } from "react-schemaorg";
-import '../styles.css'
 import moment from "moment";
 import { Head } from "../../common/seo";
-import { pageDefault } from "../../common/lib/common";
-
-pageDefault()
+import { Layout } from "../../common/layout";
 
 const mapDateForLd = (date: string, time: string | null) => {
   const dateFormat = "YYYY-MM-DD",
@@ -35,10 +32,10 @@ const BrangInfo = ({ data }: QueryData<BrangQuery, never>) => {
 
 
   return (
-    <>
+    <Layout>
       <Head ldData={eventLdDescription}/>
       <Body data={data.brangsJson}/>
-    </>
+    </Layout>
   );
 }
 

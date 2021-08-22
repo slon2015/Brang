@@ -1,7 +1,7 @@
-import { Grid, Hidden, makeStyles, Paper, ThemeProvider, Typography, useMediaQuery } from '@material-ui/core';
+import { Grid, makeStyles, Typography, useMediaQuery } from '@material-ui/core';
 import React from 'react';
 import { Header } from '../header';
-import { desktopBreakpoint, muiTheme } from '../lib/theme';
+import { desktopBreakpoint } from '../lib/theme';
 import { Menu } from './menu';
 import { MenuTree } from './menuUtils';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -18,8 +18,8 @@ interface PageBodyProps {
 export const PageBody = ({tree, title, body} : PageBodyProps) => {
   const styles = useStyles()
   return (
-    <ThemeProvider theme={muiTheme}>
-      <Header/>
+    <>
+      <Header backRef="/docs"/>
       <Grid container spacing={2} className={clsx(styles.container, styles.fullHeight)}>
         {
           useMediaQuery(desktopBreakpoint) && <Grid item sm={4}>
@@ -41,7 +41,7 @@ export const PageBody = ({tree, title, body} : PageBodyProps) => {
           </Panel>
         </Grid>
       </Grid>
-    </ThemeProvider>
+    </>
   )
 }
 

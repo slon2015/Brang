@@ -1,13 +1,11 @@
 import React from "react";
 
 
-import "./styles.css";
 import { Body } from "../common/body";
-import 'moment/locale/ru';
 import { graphql } from "gatsby";
 import { CalendarQuery, QueryData } from "../common/lib/model";
 import { Head } from "../common/seo";
-import { pageDefault } from "../common/lib/common";
+import { Layout } from "../common/layout";
 
 export const query = graphql`
 {
@@ -28,14 +26,12 @@ export const query = graphql`
 }
 `
 
-
-
-pageDefault()
-
 const home = ({data}: QueryData<CalendarQuery, never>) => (
   <div className="home">
-    <Head/>
-    <Body brangs={data.allBrangsJson.nodes} tags={data.allTagsJson.nodes.map(tag => tag.name)}/>
+    <Layout>
+      <Head/>
+      <Body brangs={data.allBrangsJson.nodes} tags={data.allTagsJson.nodes.map(tag => tag.name)}/>
+    </Layout>
   </div>
 );
 

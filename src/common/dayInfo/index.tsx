@@ -1,4 +1,4 @@
-import { Grid, makeStyles, ThemeProvider, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 import { Link } from "gatsby";
 import moment from "moment";
 import React from "react";
@@ -6,7 +6,6 @@ import { CategorySelector } from "../body/categorySelector";
 import { Tag } from "../body/tag";
 import { Header } from "../header";
 import { BrangDayInfo } from "../lib/model";
-import { muiTheme } from "../lib/theme";
 import { Panel } from "../panel";
 
 interface BodyProps {
@@ -20,8 +19,8 @@ interface BodyProps {
 export const Body = ({day, brangs, selectedCategories, categories, selectCategories}: BodyProps) => {
   const styles = useStyles();
   return (
-    <ThemeProvider theme={muiTheme}>
-      <Header/>
+    <>
+      <Header backRef="/calendar"/>
       <Grid container direction="column" spacing={3} alignItems="stretch">
         <Grid item>
           <Panel>
@@ -72,7 +71,7 @@ export const Body = ({day, brangs, selectedCategories, categories, selectCategor
           ))
         }
       </Grid>
-    </ThemeProvider>
+    </>
   )
 }
 

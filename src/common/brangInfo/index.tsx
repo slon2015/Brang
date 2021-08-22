@@ -1,11 +1,10 @@
-import { Grid, makeStyles, ThemeProvider, Typography } from '@material-ui/core';
-import { Link } from 'gatsby';
+import { Grid, makeStyles, Typography } from '@material-ui/core';
 import moment from 'moment';
 import React from 'react';
 import { Tag } from '../body/tag';
 import { Header } from '../header';
 import { DetailedBrangInfo } from '../lib/model';
-import { muiTheme, theme } from '../lib/theme';
+import { theme } from '../lib/theme';
 import { Panel } from '../panel';
 
 interface BrangProps {
@@ -17,8 +16,8 @@ export const Body = ({data}: BrangProps) => {
     styles = useStyles();
 
   return (
-    <ThemeProvider theme={muiTheme}>
-      <Header/>
+    <>
+      <Header backRef="/calendar"/>
       <Grid container direction="column">
         <Grid item>
           <Panel>
@@ -53,7 +52,7 @@ export const Body = ({data}: BrangProps) => {
           </Panel>
         </Grid>
       </Grid>
-    </ThemeProvider>
+    </>
   )
 }
 
