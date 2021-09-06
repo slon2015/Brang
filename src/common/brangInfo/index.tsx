@@ -5,6 +5,7 @@ import { Tag } from '../body/tag';
 import { Header } from '../header';
 import { DetailedBrangInfo } from '../lib/model';
 import { theme } from '../lib/theme';
+import { checkLink } from '../metrics/goingLink';
 import { Panel } from '../panel';
 
 interface BrangProps {
@@ -12,7 +13,7 @@ interface BrangProps {
 }
 
 export const Body = ({data}: BrangProps) => {
-  const {name, description, startTime, endTime, link, tags, location, date} = data,
+  const {name, description, startTime, endTime, link, tags, location, date, id} = data,
     styles = useStyles();
 
   return (
@@ -37,7 +38,7 @@ export const Body = ({data}: BrangProps) => {
                   </Grid>
                 )}
             </Grid><br/>
-            <a href={link}>
+            <a href={link} onClick={() => checkLink(id)}>
               <Tag classes={{box: styles.link}}>
                 <Typography variant="body2">
                   Сылка на мероприятие

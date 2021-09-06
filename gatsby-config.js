@@ -4,7 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-const ymId = process.env.YM;
+const ymId = process.env.GATSBY_YM;
+
+require("dotenv").config({
+  path: '.env',
+})
 
 /* eslint-disable */
 module.exports = {
